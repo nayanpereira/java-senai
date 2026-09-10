@@ -4,6 +4,7 @@ public class Algoritmo18 {
         // criar o vetor array, e alocar a memória necessária para o vetorarray na JVM,
         // No Java, vetores têm tamanho fixo e são objetos
         // precisa usar a palavra "new" para instanciar a estrutura na memória.
+        // lista(array, vetor)
         int[] numeros = new int[101];
 
         // for para verificar se o número e positivo e adicionar no vetor/array
