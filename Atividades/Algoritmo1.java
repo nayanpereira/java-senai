@@ -1,4 +1,4 @@
-public class App {
+public class Algoritmo1 {
     // Aula git e github
     public static void main(String[] args) throws
 Exception {
