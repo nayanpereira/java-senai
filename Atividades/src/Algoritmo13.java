@@ -18,8 +18,7 @@ public class Algoritmo13 {
         }else {
             IO.println("Os números são iguais");
         }
-
-
+        
     }
     
 }
