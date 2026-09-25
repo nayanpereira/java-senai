@@ -4,7 +4,7 @@ public class Algoritmo47 {
     // IO.println() IO.readln();
     // imprima a média e soma valores
 
-    public void main(String[] args) {
+    public void main() {
         int[] vetor = new int[10];
         int soma = 0;
 

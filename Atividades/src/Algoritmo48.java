@@ -7,7 +7,7 @@ public class Algoritmo48 {
         
     */
    // Faça um algoritmo que mostre os valores da diagonal prencipal 
-    public void main(String[] args) {
+    public void main() {
         int[][] matriz = {
             {20, 50, 80},
             {45, 60, 90},
