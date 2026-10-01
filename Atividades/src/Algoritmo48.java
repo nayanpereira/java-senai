@@ -14,6 +14,14 @@ public class Algoritmo48 {
             {45, 67, 89}
         };
 
+        /* matriz
+             0,0  0,1  0,2
+             1,0  1,1  1,2
+             2,0  2,1  2,2
+
+        */ 
+
+
         IO.println("Valores da diagonal principal:");
         
         // matriz.length 3 , matriz de 3 linhas

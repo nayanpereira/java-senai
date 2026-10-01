@@ -9,7 +9,7 @@ import java.util.List;
     Crie um loop 1-adicionar 2-sair
     mostre no final a quantidade de laboratório adicionados
     mostre todos os laboratórios
-    List<String> laboratorios = ArrayLista<>();
+    List<String> laboratorios = ArrayList<>();
     
     
     */
