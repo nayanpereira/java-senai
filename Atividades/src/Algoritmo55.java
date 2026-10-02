@@ -64,7 +64,7 @@ public class Algoritmo55 { // Declaração pública da classe chamada Algoritmo5
         // -------------------------------------------------------------------------
         
         Map<String, String> dicionarioAmbientes = new HashMap<>();
-        // Lê-se: Cria uma variável chamada dicionarioAmbientes do tipo Interface Map, que associa Textos(chave) a Textos(valor), e recebe uma nova instância da classe HashMap.
+        // Lê-se: Cria/Declaro uma variável chamada dicionarioAmbientes do tipo Interface Map, que associa Textos(chave) a Textos(valor), e recebe uma nova instância da classe HashMap. Cria um dicionário(vetor) e salva na variável
         // O que faz: Instancia o nosso dicionário na memória onde a chave será a sala (ex: F07) e o valor a descrição (ex: Laboratório).
 
         // Inserindo os dados iniciais solicitados no problema para testes:
@@ -116,34 +116,68 @@ public class Algoritmo55 { // Declaração pública da classe chamada Algoritmo5
                     opcao = Integer.parseInt(entradaUsuario); // Lê-se: A variável opcao recebe a conversão do texto digitado para um número Inteiro. // O que faz: Transforma o texto digitado pelo usuário no menu (ex: "1") no número 1 para o switch funcionar.
                 }
 
-                switch (opcao) { // Lê-se: (Interruptor/Desvio) Avalie a variável opcao e escolha um dos casos a seguir... O que faz: Direciona o fluxo do programa dependendo do número escolhido.
+                switch (opcao) { // Lê-se: (Interruptor/Desvio ("Escolha"/selecione)) Avalie a variável opcao e escolha um dos casos a seguir... O que faz: Direciona o fluxo do programa dependendo do número escolhido.
 
-                    case 1:
-                    // Lê-se: Caso a opção seja 1... O que faz: Entra na rotina de "Cadastrar".
+                    case 1: // Lê-se: Caso a opção seja 1 faça algo... O que faz: Entra na rotina de "Cadastrar".
                         String chaveCadastro = JOptionPane.showInputDialog("Digite a chave (Ex: A01):");
-                        // Lê-se: Cria chaveCadastro recebendo a digitação da caixa de diálogo.
+                        // Lê-se: Declaro uma variável do tipo String chamada chaveCadastro que recebe o que o usuário digitar "a chave" na caixa de diálogo do menu do JOptionPane
                         String valorCadastro = JOptionPane.showInputDialog("Digite a descrição do ambiente:");
-                        // Lê-se: Cria valorCadastro recebendo a descrição da caixa de diálogo.
+                        // Lê-se: Declaro uma variável do tipo String chamada valorCadastro que recebe o que o usuário digitar "a descrição (valor)" na caixa de diálogo do menu do JOptionPane
                         dicionarioAmbientes.put(chaveCadastro.toUpperCase(), valorCadastro);
-                        // Lê-se: Insere no dicionário a chave (convertida para maiúscula) e a descrição.
+                        // Lê-se: Insere no dicionário a chave (convertida para maiúscula) e a descrição "valor", coloca a chave e o ambiente.
                         JOptionPane.showMessageDialog(null, "Ambiente cadastrado com sucesso!");
                         // Lê-se: Mostra uma mensagem de sucesso na tela.
                         break;
                         // Lê-se: Pare e saia do switch.
 
-                    case 2:
-                    // Lê-se: Caso a opção seja 2...
-                    // O que faz: Entra na rotina de "Listar".
-                        String lista = "Ambientes Cadastrados:\n\n";
-                        // Lê-se: Cria um texto base para acumular os resultados.
+
+                        /*Este bloco de código está percorrendo um mapa (dicionário) que contém pares de chave e valor (ambos do tipo texto), 
+                        formatando todos esses dados em uma única mensagem de texto e, por fim, exibindo essa mensagem em uma janela pop-up na tela.
+                         */
+
+
+                    // case 2: // Lê-se: Caso a opção seja 2 faça algo... O que faz: Entra na rotina de "Listar".
+                    //     String lista = "Ambientes Cadastrados:\n\n";
+                    //     // Lê-se: Declaro uma variável do tipo String com nome lista que recebe/atribuo um texto "Ambientes Cadastrados:\n\n"
+                    //     for (Map.Entry<String, String> item : dicionarioAmbientes.entrySet()) {
+                    //         // Percorre os dados: Usa um laço de repetição (for "para cada, de dentro de y) para passar por cada item guardado no dicionário chamado dicionarioAmbientesp.
+                        
+                    //         /*  Estou declarando uma variável chamada item do tipo Entry ("entrada"/"registro/par"), que é uma interface interna da interface Map (dicionário), que recebe um par de chave e valor do tipo String.
+                    //         É como abrir o dicionário {chave=valor, chave=valor} e pegar um único registro/par de chave e valor, ambos do tipo String.
+                    //         A interface interna Entry dá acesso aos métodos getKey() e getValue(), que leem, respectivamente, a chave e o valor armazenados nessa variável. 
+                    //         - Estou declarando uma variável item do tipo Entry, que é uma interface interna do Map
+                    //         - Para cada iteração do laço/loop for, pegue o dicionário dicionarioAmbientes, extraia com (entrySet()) o conjunto de todas as suas entradas(chave=valor) e armazene o par/registro atual de chave e valor na variável item do tipo Map.Entry<String, String>
+                    //         */
+
+                    //         lista += "Chave: " + item.getKey() + " | Descrição: " + item.getValue() + "\n";
+                    //         /*  Lê-se: O item da lista existnte recebe/concatena o que tiver nela mais "chave" concatena com o que pegar com getKey na iteração "| Descrição:"" concatena com o que pegar no getValue e pula uma linha,
+                    //             no final lista aponta sempre para um novo objeto String concatenado 
+
+                    //             ficando: "Ambientes Cadastrados:\n\n"Chave: {chave} "| Descrição: "{valor}"\n" depois concatena de novo a cada volta:
+                    //                      "Ambientes Cadastrados:\n\n"Chave: {chave} "| Descrição: "{valor}"\n""Chave: {chave} "| Descrição: "{valor}"\n"
+
+                    //             PROBLEMA: A cada volta e concatenação a variável lista que e mutavél, deixa de apontar para o objeto String "imutável" antigo e aponta para o novo objeto String "imutável"
+                    //             lotando a memória de lixo com objetos usados por pouco tempo e sem nenhuma variável apontando para eles. Jogando lixo para o garbage collection.
+                    //         */
+
+                    //     }
+                    //     JOptionPane.showMessageDialog(null, lista);
+                    //     // Lê-se: Mostra a lista da variável String item completa na caixinha da tela, mostrando o item após a ultima concatenação e formatado com /n/n em cada linha.
+                    //     break;
+                    //     // Lê-se: Pare e saia do switch.
+
+                    case 2: // Lê-se: Caso a opção seja 2 faça algo... O que faz: Entra na rotina de "Listar".
+                        StringBuilder lista = new StringBuilder("Ambientes Cadastrados:\n\n");
+
                         for (Map.Entry<String, String> item : dicionarioAmbientes.entrySet()) {
-                        // Lê-se: Para cada 'item' (conjunto Chave-Valor) dentro da lista de entradas do dicionário...
-                        // O que faz: Faz um loop passando por todos os registros do HashMap.
-                            lista += "Chave: " + item.getKey() + " | Descrição: " + item.getValue() + "\n";
-                            // Lê-se: Adiciona ao texto da 'lista' a chave atual e o valor atual.
+                            // para cada iteração entre no dicionário e extraia com entreSet um conjunto de chave=valor e garde na variável Item do tipo Entry, com par de chave=valor ambos Strings
+                            // .append() modifica o mesmo objeto na memória, sem criar textos novos deixando lixo (Boa Prática "Performance")
+                            lista.append("Chave: ").append(item.getKey())
+                                .append(" | Descrição: ").append(item.getValue())
+                                .append("\n");
                         }
-                        JOptionPane.showMessageDialog(null, lista);
-                        // Lê-se: Mostra a lista completa de ambientes na tela.
+                        // Converte para String só na hora de exibir
+                        JOptionPane.showMessageDialog(null, lista.toString());   
                         break;
                         // Lê-se: Pare e saia do switch.
 
