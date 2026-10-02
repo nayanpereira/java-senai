@@ -1,45 +1,3 @@
-
-     /* Desáfio
-     Considerando a aula de lógica aristotélica e os programas de fluxograma e pseudocódigo a saber:
-
-     visualgo.net/en
-     csvistool.com
-     geeksforgeeks.org
-     FAQ do professor nesse repositório: faq_logica.pdf
-
-     crie um arquivo que possa armazenar valores de um dicionário
-     Map(Interface) - HashMap(Classe)
-     Ambiente - Lavoratório de programação java
-     chave: F07
-     chave: F07 Descrição " Laboratório de Programção Java"
-     chave: B03 Descrição: "Saula de aula padrão"
-     chave: G09 Descrição: "Oficina de lanternagem e pintura"
-
-     Problema: criar um cadastro de um dicionário de ambientes
-     esse cadastro deverá armazenar em um arquivo .txt
-     Deverá ter um loop (do while ) com um menu de opções.
-     //cadastrar
-     //listar
-     //pesquisar
-     //excluir
-     //alterar
-     //sair
-   
-
-    
-       Avaliação de Capacidades
-       (cada item: 3,10 pontos)
-       - Elaborar e Explicar um Try Catch Finally (Seg)
-       - Uso de JOptionPane ou JFrame ou outros SWING
-       - Elaborar e Explicar DateTimeFormatter (Ter)
-       - Elaborar e Explicar LocalDateTime (Ter)
-       - Elaborar e Explicar FileWriter (Ter)
-       - Elaborar e Explicar HashMap (Qua)
-       - Elaborar e Explicar Map (Qua)
-       - Elaborar e Explicar a Organização do Código (Qui)
-     
-     
-     */
 import java.util.Map; //Lê-se: Importa a interface Map do pacote java.util. O que faz: Traz a interface (contrato) que define a estrutura de dados de chave e valor.
 import java.util.HashMap; // Importa a classe HashMap do pacote java.util. O que faz: Traz a classe concreta que implementa o Map usando uma tabela de espalhamento (hash) para buscas rápidas.
 import javax.swing.JOptionPane; // Importa a classe JOptionPane do pacote javax.swing. O que faz: Permite criar janelas gráficas (caixas de diálogo) para interagir com o usuário (entrada e saída). Avaliação: Uso de JOptionPane ou JFrame ou outros SWING - Aplicado para toda a interface com o usuário.
@@ -118,7 +76,11 @@ public class Algoritmo55 { // Declaração pública da classe chamada Algoritmo5
 
                 switch (opcao) { // Lê-se: (Interruptor/Desvio ("Escolha"/selecione)) Avalie a variável opcao e escolha um dos casos a seguir... O que faz: Direciona o fluxo do programa dependendo do número escolhido.
 
-                    case 1: // Lê-se: Caso a opção seja 1 faça algo... O que faz: Entra na rotina de "Cadastrar".
+                    case 1: 
+                    // -------------------------------------------------------------------------
+                    // ROTINA 1: Rotibna de cadastro
+                    // -------------------------------------------------------------------------
+                    // Lê-se: Caso a opção seja 1 faça algo... O que faz: Entra na rotina de "Cadastrar".
                         String chaveCadastro = JOptionPane.showInputDialog("Digite a chave (Ex: A01):");
                         // Lê-se: Declaro uma variável do tipo String chamada chaveCadastro que recebe o que o usuário digitar "a chave" na caixa de diálogo do menu do JOptionPane
                         String valorCadastro = JOptionPane.showInputDialog("Digite a descrição do ambiente:");
@@ -135,38 +97,11 @@ public class Algoritmo55 { // Declaração pública da classe chamada Algoritmo5
                         formatando todos esses dados em uma única mensagem de texto e, por fim, exibindo essa mensagem em uma janela pop-up na tela.
                          */
 
-
-                    // case 2: // Lê-se: Caso a opção seja 2 faça algo... O que faz: Entra na rotina de "Listar".
-                    //     String lista = "Ambientes Cadastrados:\n\n";
-                    //     // Lê-se: Declaro uma variável do tipo String com nome lista que recebe/atribuo um texto "Ambientes Cadastrados:\n\n"
-                    //     for (Map.Entry<String, String> item : dicionarioAmbientes.entrySet()) {
-                    //         // Percorre os dados: Usa um laço de repetição (for "para cada, de dentro de y) para passar por cada item guardado no dicionário chamado dicionarioAmbientesp.
-                        
-                    //         /*  Estou declarando uma variável chamada item do tipo Entry ("entrada"/"registro/par"), que é uma interface interna da interface Map (dicionário), que recebe um par de chave e valor do tipo String.
-                    //         É como abrir o dicionário {chave=valor, chave=valor} e pegar um único registro/par de chave e valor, ambos do tipo String.
-                    //         A interface interna Entry dá acesso aos métodos getKey() e getValue(), que leem, respectivamente, a chave e o valor armazenados nessa variável. 
-                    //         - Estou declarando uma variável item do tipo Entry, que é uma interface interna do Map
-                    //         - Para cada iteração do laço/loop for, pegue o dicionário dicionarioAmbientes, extraia com (entrySet()) o conjunto de todas as suas entradas(chave=valor) e armazene o par/registro atual de chave e valor na variável item do tipo Map.Entry<String, String>
-                    //         */
-
-                    //         lista += "Chave: " + item.getKey() + " | Descrição: " + item.getValue() + "\n";
-                    //         /*  Lê-se: O item da lista existnte recebe/concatena o que tiver nela mais "chave" concatena com o que pegar com getKey na iteração "| Descrição:"" concatena com o que pegar no getValue e pula uma linha,
-                    //             no final lista aponta sempre para um novo objeto String concatenado 
-
-                    //             ficando: "Ambientes Cadastrados:\n\n"Chave: {chave} "| Descrição: "{valor}"\n" depois concatena de novo a cada volta:
-                    //                      "Ambientes Cadastrados:\n\n"Chave: {chave} "| Descrição: "{valor}"\n""Chave: {chave} "| Descrição: "{valor}"\n"
-
-                    //             PROBLEMA: A cada volta e concatenação a variável lista que e mutavél, deixa de apontar para o objeto String "imutável" antigo e aponta para o novo objeto String "imutável"
-                    //             lotando a memória de lixo com objetos usados por pouco tempo e sem nenhuma variável apontando para eles. Jogando lixo para o garbage collection.
-                    //         */
-
-                    //     }
-                    //     JOptionPane.showMessageDialog(null, lista);
-                    //     // Lê-se: Mostra a lista da variável String item completa na caixinha da tela, mostrando o item após a ultima concatenação e formatado com /n/n em cada linha.
-                    //     break;
-                    //     // Lê-se: Pare e saia do switch.
-
-                    case 2: // Lê-se: Caso a opção seja 2 faça algo... O que faz: Entra na rotina de "Listar".
+                    case 2: 
+                    // -------------------------------------------------------------------------
+                    // ROTINA 2: LISTAR AMBIENTES (Seu estudo sobre Map.Entry)
+                    // -------------------------------------------------------------------------
+                    // Lê-se: Caso a opção seja 2 faça algo... O que faz: Entra na rotina de "Listar".
                         StringBuilder lista = new StringBuilder("Ambientes Cadastrados:\n\n");
 
                         for (Map.Entry<String, String> item : dicionarioAmbientes.entrySet()) {
@@ -181,90 +116,199 @@ public class Algoritmo55 { // Declaração pública da classe chamada Algoritmo5
                         break;
                         // Lê-se: Pare e saia do switch.
 
-                    case 3:
-                    // Lê-se: Caso a opção seja 3...
-                    // O que faz: Entra na rotina de "Pesquisar".
+                    case 3: 
+                    // -------------------------------------------------------------------------
+                    // ROTINA 3: PESQUISAR AMBIENTE
+                    // -------------------------------------------------------------------------
+                    // Lê-se: Caso a opção selecionada no menu seja 3... O que faz: Inicia o fluxo de busca de um valor a partir de sua chave.
+                        
                         String chavePesquisa = JOptionPane.showInputDialog("Digite a chave para pesquisar:");
-                        // Lê-se: Pede ao usuário qual chave procurar.
-                        if (dicionarioAmbientes.containsKey(chavePesquisa.toUpperCase())) {
-                        // Lê-se: Se o dicionário contém a chave digitada (convertida para maiúscula)...
-                            String resultado = dicionarioAmbientes.get(chavePesquisa.toUpperCase());
-                            // Lê-se: Busca e guarda em 'resultado' o valor associado a essa chave.
-                            JOptionPane.showMessageDialog(null, "Encontrado:\n" + resultado);
-                            // Lê-se: Mostra o valor na tela.
-                        } else {
-                        // Lê-se: Senão...
-                            JOptionPane.showMessageDialog(null, "Ambiente não encontrado.");
-                            // Lê-se: Avisa que não achou.
+                        // Lê-se: Solicita via caixa de entrada gráfica a chave a ser pesquisada e armazena o retorno.
+                        // O que faz: Captura o texto digitado pelo usuário. Retorna null caso o usuário clique em "Cancelar".
+
+                        if (chavePesquisa != null) {
+                        // Lê-se: Se a variável 'chavePesquisa' for diferente de null (ou seja, o usuário não cancelou)...
+                        // O que faz: Protege o código contra 'NullPointerException' (erro fatal de tentar acessar memória nula).
+
+                            chavePesquisa = chavePesquisa.toUpperCase();
+                            // Lê-se: Atribui a 'chavePesquisa' o seu próprio valor convertido para letras maiúsculas.
+                            // O que faz: Garante a padronização e busca insensível a maiúsculas/minúsculas de forma eficiente,
+                            // evitando reprocessar e criar múltiplos objetos String imutáveis ao longo das buscas.
+
+                            String resultado = dicionarioAmbientes.get(chavePesquisa);
+                            // Lê-se: Executa o método .get() no Mapa passando 'chavePesquisa' e armazena na variável 'resultado'.
+                            // O que faz: O método .get() busca no Mapa. Se a chave existir, devolve o valor associado; 
+                            // se não existir, devolve diretamente 'null' sem lançar erro.
+
+                            if (resultado != null) {
+                            // Lê-se: Se 'resultado' for diferente de null (a chave foi encontrada)...
+                            // O que faz: Confirma que o mapeamento Chave -> Valor existe.
+
+                                JOptionPane.showMessageDialog(null, "Encontrado:\n" + resultado);
+                                // Lê-se: Exibe a janela de mensagem contendo o texto formatado com o resultado.
+                                // O que faz: Apresenta o valor associado à chave pesquisada na interface gráfica.
+
+                            } else {
+                            // Lê-se: Senão (se 'resultado' veio null)...
+                            // O que faz: Trata o cenário de chave inexistente no Mapa.
+
+                                JOptionPane.showMessageDialog(null, "Ambiente não encontrado.");
+                                // Lê-se: Exibe a janela informando que o ambiente não foi localizado.
+                                // O que faz: Notifica visualmente que a busca não obteve sucesso.
+                            }
                         }
                         break;
-                        // Lê-se: Pare e saia do switch.
+                        // Lê-se: Pare e interrompa a execução do bloco 'switch'.
+                        // O que faz: Impede que a execução continue para os casos abaixo (evita o 'fall-through').
 
                     case 4:
-                    // Lê-se: Caso a opção seja 4...
-                    // O que faz: Entra na rotina de "Excluir".
+                    // -------------------------------------------------------------------------
+                    // ROTINA 4: EXCLUIR AMBIENTE
+                    // -------------------------------------------------------------------------
+                    // Lê-se: Caso a opção selecionada no menu seja 4...
+                    // O que faz: Inicia a remoção de um par chave-valor do dicionário.
+
                         String chaveExcluir = JOptionPane.showInputDialog("Digite a chave para EXCLUIR:");
-                        // Lê-se: Pede a chave para deletar.
-                        if (dicionarioAmbientes.containsKey(chaveExcluir.toUpperCase())) {
-                        // Lê-se: Se a chave existir no mapa...
-                            dicionarioAmbientes.remove(chaveExcluir.toUpperCase());
-                            // Lê-se: Remove do dicionário a entrada referente àquela chave.
-                            JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
-                            // Lê-se: Confirma a exclusão visualmente.
-                        } else {
-                        // Lê-se: Senão...
-                            JOptionPane.showMessageDialog(null, "Chave não existe no cadastro.");
-                            // Lê-se: Informa que nada foi excluído.
+                        // Lê-se: Solicita ao usuário a chave do registro que deseja deletar.
+                        // O que faz: Abre a caixa de diálogo e aguarda o texto ou o cancelamento.
+
+                        if (chaveExcluir != null) {
+                        // Lê-se: Se 'chaveExcluir' não for nula (usuário confirmou a entrada)...
+                        // O que faz: Valida a entrada do usuário evitando execução em caso de cancelamento.
+
+                            chaveExcluir = chaveExcluir.toUpperCase();
+                            // Lê-se: Converte a chave a ser excluída para caixa alta uma única vez.
+                            // O que faz: Padroniza o texto para alinhar com as chaves armazenadas no Mapa.
+
+                            String removido = dicionarioAmbientes.remove(chaveExcluir);
+                            // Lê-se: Chama o método .remove() de 'dicionarioAmbientes' passando 'chaveExcluir' e guarda em 'removido'.
+                            // O que faz: O método .remove() realiza duas ações em uma só busca: remove a chave do Mapa 
+                            // e RETORNA o valor que estava associado a ela. Se a chave não existia, retorna 'null'.
+
+                            if (removido != null) {
+                            // Lê-se: Se a variável 'removido' for diferente de null...
+                            // O que faz: Confirma que o elemento realmente existia e foi removido da memória do Mapa.
+
+                                JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
+                                // Lê-se: Exibe janela de confirmação de exclusão.
+                                // O que faz: Alerta o usuário que o registro foi deletado.
+
+                            } else {
+                            // Lê-se: Senão (se 'removido' retornou null)...
+                            // O que faz: Trata a tentativa de remoção de algo inexistente.
+
+                                JOptionPane.showMessageDialog(null, "Chave não existe no cadastro.");
+                                // Lê-se: Exibe aviso de que a chave não foi encontrada.
+                                // O que faz: Informa que nenhuma alteração foi realizada na coleção de dados.
+                            }
                         }
                         break;
-                        // Lê-se: Pare e saia do switch.
+                        // Lê-se: Interrompe a execução do 'switch'.
+                        // O que faz: Finaliza o 'case 4' e desvia o fluxo para o final da estrutura do 'switch'.
+
 
                     case 5:
-                    // Lê-se: Caso a opção seja 5...
-                    // O que faz: Entra na rotina de "Alterar".
+                    // -------------------------------------------------------------------------
+                    // ROTINA 5: ALTERAR AMBIENTE
+                    // -------------------------------------------------------------------------
+                    // Lê-se: Caso a opção selecionada no menu seja 5...
+                    // O que faz: Inicia a atualização da descrição de uma chave já cadastrada.
+
                         String chaveAlterar = JOptionPane.showInputDialog("Digite a chave que deseja ALTERAR:");
-                        // Lê-se: Solicita a chave alvo da alteração.
-                        if (dicionarioAmbientes.containsKey(chaveAlterar.toUpperCase())) {
-                        // Lê-se: Se o mapa possui essa chave...
-                            String novoValor = JOptionPane.showInputDialog("Digite a NOVA descrição:");
-                            // Lê-se: Pede o novo texto descritivo.
-                            dicionarioAmbientes.put(chaveAlterar.toUpperCase(), novoValor);
-                            // Lê-se: Substitui o valor antigo pelo novo na mesma chave usando o 'put'.
-                            JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
-                            // Lê-se: Confirma a alteração.
-                        } else {
-                        // Lê-se: Senão...
-                            JOptionPane.showMessageDialog(null, "Ambiente não existe para ser alterado.");
-                            // Lê-se: Avisa do erro.
+                        // Lê-se: Pede a chave cujo valor será atualizado.
+                        // O que faz: Captura a chave alvo da edição.
+
+                        if (chaveAlterar != null) {
+                        // Lê-se: Se 'chaveAlterar' for diferente de null...
+                        // O que faz: Garante que o usuário digitou algo e não clicou em cancelar.
+
+                            chaveAlterar = chaveAlterar.toUpperCase();
+                            // Lê-se: Normaliza a chave alvo para maiúsculas.
+                            // O que faz: Garante a correspondência exata no Mapa.
+
+                            if (dicionarioAmbientes.containsKey(chaveAlterar)) {
+                            // Lê-se: Executa .containsKey() no Mapa passando 'chaveAlterar' e checa se devolve 'true'.
+                            // O que faz: Verifica se a chave já existe no cadastro ANTES de pedir o novo valor.
+
+                                String novoValor = JOptionPane.showInputDialog("Digite a NOVA descrição:");
+                                // Lê-se: Solicita a nova descrição para a chave informada.
+                                // O que faz: Coleta o novo texto de valor.
+
+                                if (novoValor != null) {
+                                // Lê-se: Se 'novoValor' não for nulo...
+                                // O que faz: Evita sobrescrever o cadastro existente com um valor nulo caso o usuário cancele esta etapa.
+
+                                    dicionarioAmbientes.put(chaveAlterar, novoValor);
+                                    // Lê-se: Executa o método .put() passando a chave existente e o novo valor.
+                                    // O que faz: No 'Map', se a chave já existe, o método .put() SOBRESCREVE o valor antigo 
+                                    // pelo novo valor (atualização). Se a chave não existisse, ele criaria uma nova entrada.
+
+                                    JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
+                                    // Lê-se: Exibe a confirmação da alteração.
+                                    // O que faz: Dá o feedback visual de sucesso da atualização.
+                                }
+
+                            } else {
+                            // Lê-se: Senão (se a chave não existe no Mapa)...
+                            // O que faz: Trata o caso de tentativa de alteração de um registro não cadastrado.
+
+                                JOptionPane.showMessageDialog(null, "Ambiente não existe para ser alterado.");
+                                // Lê-se: Alerta que a chave especificada não existe.
+                                // O que faz: Informa o usuário sobre o erro de busca antes do recadastro.
+                            }
                         }
                         break;
-                        // Lê-se: Pare e saia do switch.
+                        // Lê-se: Encerra o 'case 5'.
+                        // O que faz: Sai do bloco do 'switch'.
+
 
                     case 6:
-                    // Lê-se: Caso a opção seja 6...
-                    // O que faz: Opção de Sair e gerar o arquivo de texto.
+                    // -------------------------------------------------------------------------
+                    // ROTINA 6: SAIR
+                    // -------------------------------------------------------------------------
+                    // Lê-se: Caso a opção selecionada seja 6...
+                    // O que faz: Define a condição de parada do sistema.
+
                         JOptionPane.showMessageDialog(null, "Encerrando o sistema e salvando o arquivo...");
-                        // Lê-se: Avisa que está finalizando.
+                        // Lê-se: Exibe a mensagem de encerramento.
+                        // O que faz: Alerta o usuário que o programa irá fechar o menu e avançar para o salvamento.
                         break;
-                        // Lê-se: Pare e saia do switch.
+                        // Lê-se: Sai do 'switch'.
+                        // O que faz: Conclui a opção do menu e permite ao fluxo chegar à checagem do 'do-while'.
+
 
                     default:
-                    // Lê-se: Caso contrário (se não for nenhum dos números acima)...
-                    // O que faz: Trata entradas de números não listados no menu (ex: 9).
+                    // -------------------------------------------------------------------------
+                    // ROTINA PADRÃO (OPÇÃO INVÁLIDA)
+                    // -------------------------------------------------------------------------
+                    // Lê-se: Em qualquer outro caso não mapeado pelos números anteriores...
+                    // O que faz: Captura números que estão fora das opções de 1 a 6 do menu (ex: 0, 7, 99).
+
                         JOptionPane.showMessageDialog(null, "Opção inválida!");
-                        // Lê-se: Exibe um erro de opção inválida.
+                        // Lê-se: Mostra aviso de opção fora do menu.
+                        // O que faz: Trata valores numéricos incorretos fornecidos pelo usuário.
                 }
 
             } catch (NumberFormatException e) {
-            // Lê-se: Pegue a exceção de Formato de Número (caso a pessoa digite uma letra em vez de número).
-            // O que faz: Impede que o programa exploda (crash) quando o `Integer.parseInt` falhar.
+            // -------------------------------------------------------------------------
+            // TRATAMENTO DE EXCEÇÃO NUMÉRICA
+            // -------------------------------------------------------------------------
+            // Lê-se: Capture 'NumberFormatException' e armazene os detalhes do erro na variável 'e'.
+            // O que faz: Intercepta a falha que ocorre se 'Integer.parseInt()' tentar converter uma String com letras 
+            // ou vazia ("abc", "", "1a") em um inteiro. Impede que a aplicação aborte abruptamente (crash).
+
                 JOptionPane.showMessageDialog(null, "Por favor, digite apenas números válidos do menu.");
-                // Lê-se: Alerta o usuário do erro de digitação.
+                // Lê-se: Alerta o usuário sobre a necessidade de informar apenas caracteres numéricos.
+                // O que faz: Oferece uma mensagem amigável e permite que a repetição do menu continue sem travar o sistema.
             }
 
         } while (opcao != 6);
-        // Lê-se: ...enquanto a opção for diferente de 6.
-        // O que faz: Finaliza o laço "do-while". Se a opção for 6, ele sai do laço e vai para a linha de baixo.
+        // -------------------------------------------------------------------------
+        // CONDIÇÃO DE PARADA DO LAÇO DO-WHILE
+        // -------------------------------------------------------------------------
+        // Lê-se: Repita todo o bloco acima ENQUANTO a variável 'opcao' for diferente (!=) do inteiro 6.
+        // O que faz: Finaliza o laço "do-while". Se a opção for 6, ele sai do laço e vai para a linha de baixo. Garante que o menu reapareça continuamente após a execução de cada operação. 
+        // Quando 'opcao' for igual a 6, a expressão resulta em 'false', quebrando o laço e avançando a execução.
 
 
         // -------------------------------------------------------------------------
@@ -278,11 +322,14 @@ public class Algoritmo55 { // Declaração pública da classe chamada Algoritmo5
 
         LocalDateTime dataHoraAtual = LocalDateTime.now();
         // Lê-se: Cria um objeto do tipo Tempo e Data Local chamado dataHoraAtual que recebe o exato Agora do sistema.
-        // O que faz: Captura o relógio e calendário do computador do usuário neste milissegundo.
+        // O que faz: Captura o relógio e calendário do computador do usuário neste milissegundo, A classe 'LocalDateTime' cria um objeto imutável que representa um ponto no tempo sem fuso horário.
+        // O método '.now()' obtém a data e a hora exatas do sistema operacional no milissegundo em que a linha é executada.
 
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        // Lê-se: Cria um objeto Formatador de Tempo e Data com o padrão Dia/Mês/Ano Hora:Minuto:Segundo.
+        // Lê-se: Declara uma variável 'formatador' do tipo 'DateTimeFormatter' e instancia um objeto via método '.ofPattern(...)'.
         // O que faz: Define a regra visual de como a data será transformada em texto no documento.
+        // Significados: 'dd' = dia em 2 dígitos, 'MM' = mês em 2 dígitos (maiúsculo para não confundir com minuto), 
+        // 'yyyy' = ano com 4 dígitos, 'HH' = hora em formato 24h (00-23), 'mm' = minutos, 'ss' = segundos.
 
         String dataHoraFormatada = dataHoraAtual.format(formatador);
         // Lê-se: Cria um texto chamado dataHoraFormatada que recebe a dataHoraAtual processada pelo formatador.
@@ -358,3 +405,46 @@ public class Algoritmo55 { // Declaração pública da classe chamada Algoritmo5
 // Lê-se: Fim da classe Algoritmo55.
 }
     
+
+
+     /* Desáfio
+     Considerando a aula de lógica aristotélica e os programas de fluxograma e pseudocódigo a saber:
+
+     visualgo.net/en
+     csvistool.com
+     geeksforgeeks.org
+     FAQ do professor nesse repositório: faq_logica.pdf
+
+     crie um arquivo que possa armazenar valores de um dicionário
+     Map(Interface) - HashMap(Classe)
+     Ambiente - Lavoratório de programação java
+     chave: F07
+     chave: F07 Descrição " Laboratório de Programção Java"
+     chave: B03 Descrição: "Saula de aula padrão"
+     chave: G09 Descrição: "Oficina de lanternagem e pintura"
+
+     Problema: criar um cadastro de um dicionário de ambientes
+     esse cadastro deverá armazenar em um arquivo .txt
+     Deverá ter um loop (do while ) com um menu de opções.
+     //cadastrar
+     //listar
+     //pesquisar
+     //excluir
+     //alterar
+     //sair
+   
+
+    
+       Avaliação de Capacidades
+       (cada item: 3,10 pontos)
+       - Elaborar e Explicar um Try Catch Finally (Seg)
+       - Uso de JOptionPane ou JFrame ou outros SWING
+       - Elaborar e Explicar DateTimeFormatter (Ter)
+       - Elaborar e Explicar LocalDateTime (Ter)
+       - Elaborar e Explicar FileWriter (Ter)
+       - Elaborar e Explicar HashMap (Qua)
+       - Elaborar e Explicar Map (Qua)
+       - Elaborar e Explicar a Organização do Código (Qui)
+     
+     
+     */
