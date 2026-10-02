@@ -1,37 +1,3 @@
-// import java.util.List;
-// import java.util.ArrayList;
-
-// public class Algoritmo46 {
-//     public void main() {
-
-//         //List (Lista)  - Apenas lista os valores
-//         //Dictionary (Dicionário) Consegue listar e colocar um indice para achar o valor 100:Maria,40:JP,50:dANIEL,56:Cassio
-
-//         // < > no java chama generics 
-//         List<String> frutas = new ArrayList<>();
-//         frutas.add("Goiaba");
-//         frutas.add("Amora");
-//         frutas.add("Melancia");
-//         frutas.add("Mamão");
-
-//         IO.println("primeira fruta:" + frutas.get(0));
-//         frutas.set(1, "Uva");
-
-//         for(String fruta:frutas) {
-//             IO.println("Elemento: "+ fruta);
-//         }
-
-
-//         IO.println("Total de frutas: " +frutas.size());
-//         frutas.remove("Mamão");
-//         frutas.remove("Goiaba");
-//         frutas.remove("Melancia");
-
-//     }
-// }
-
-
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -61,9 +27,11 @@ public class Algoritmo46 {
        IO.println(frutas);
        frutas.set(1,"Uva");
        IO.println(frutas);
+
        for(String fruta:frutas){
          IO.println("elemento:"+fruta);
        }
+       
        IO.println("Total de frutas:"+frutas.size());
        frutas.remove("Mamão");
        frutas.remove("Goiaba");
