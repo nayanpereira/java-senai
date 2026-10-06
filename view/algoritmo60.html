@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    Desáfio 
+    Elaborar um programa que leia o valor de um jantar. Calcule e infome o valor da taxa do garçom (10%)
+    e o valor toral a ser pago
+    -->
+    <script>
+        const valorJantar = prompt("Digite o valor do jantar")
+        const valor = Number (valorJantar) 
+        const porcGarcom = 0.10
+        const txGarcom = (valorJantar * porcGarcom)
+        const valorTotal = (valor + txGarcom)
+        alert (`Valor do jantar = R$ ${valor}, taxa do garçom = ${porcGarcom*100}% Valor total = R$ ${valorTotal}`)
+
+    </script>
+</body>
+</html>
